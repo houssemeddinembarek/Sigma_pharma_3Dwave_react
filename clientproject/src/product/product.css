@@ -1,0 +1,23 @@
+.scheme_original  {
+    color: #f9a392 !important;
+}
+.scheme_original:hover  {
+    color: #9a9a9a !important;
+}
+
+a {
+    text-decoration: none !important;
+  }
+  .scheme_original .post_info a, .scheme_original .post_info a>span {
+    color: #9a9a9a;
+}
+
+.post_title:hover{
+    color:#8ed4cc
+}
+
+
+
+
+
+
