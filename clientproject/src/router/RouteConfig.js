@@ -3,6 +3,8 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import App from '../App';
 import Footer from '../components/footer/Footer';
 import Navbar from '../components/header/header';
+import Indication from '../indication/Indication';
+import Laboratoire from '../laboratoire/Laboratoire';
 import AddProduct from '../product/AddProduct';
 import ListProduct from '../product/ListProduct';
 // import "bootstrap/dist/css/bootstrap.css";
@@ -175,6 +177,8 @@ function RouteConfig() {
                                     <Route exact path="/" element={<App />} />
                                     <Route exact path="/addproduct" element={<AddProduct />} />
                                     <Route exact path="/listproduct" element={<ListProduct />} />
+                                    <Route exact path="/laboratoire" element={<Laboratoire />} />
+                                    <Route exact path="/indication" element={<Indication />} />
                                 </Routes>
                             </Router>
                         </div>

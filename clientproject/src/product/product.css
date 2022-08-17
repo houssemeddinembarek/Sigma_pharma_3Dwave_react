@@ -15,7 +15,15 @@ a {
 .post_title:hover{
     color:#8ed4cc
 }
+.listProductMarginContainer{
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
+.cardStyle{
+    width: max-content;
+    height: 400px;
+}
 
 
 

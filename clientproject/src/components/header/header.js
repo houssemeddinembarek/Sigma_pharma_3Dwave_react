@@ -1,6 +1,6 @@
 import React from 'react'
 import {a} from "react-router-dom";
-import sigmaTunisie from '../../assets/sigmatunisie.png';
+import sigmaTunisie from '../../assets/sigmaPh.png';
 
 
 function Header() {
@@ -167,21 +167,25 @@ function Header() {
                                 <a href="/">
                                     {/* <img src="images/Logo.png" className="logo_main" alt="" width="238" height="56" />
                                     <img src="images/Logo.png" className="logo_fixed" alt="" width="238" height="56" /> */}
-                                    <img src={sigmaTunisie} alt="" className='animated flash slow infinite' style={{ width: "150px", height: "50px" }} />
+                                    {/* <img src={sigmaTunisie} alt="" className='animated flash slow infinite' style={{ width: "200px", height: "60px" }} /> */}
+                                    <img src={sigmaTunisie} alt=""  style={{ width: "150px", height: "60px" }} />
                                 </a>
                             </div>
                         </div>
                         <div className="menu_main_wrap">
                             <nav className="menu_main_nav_area ">
                                 <ul className="menu_main_nav">
-                                    <li className="menu-item current-menu-ancestor ">
+                                    <li className="menu-item current-menu-ancestor">
                                         <a href="/">ACCUEIL</a>
                                     </li>
-                                    <li className="menu-item current-menu-ancestor">
+                                    <li className="menu-item current-menu-ancestor ">
                                         <a href="/laboratoire" className=''>LE LABORATOIRE</a>
                                     </li>
-                                    <li className="menu-item current-menu-ancestor pl-5">
+                                    <li className="menu-item current-menu-ancestor ">
                                         <a href="/listproduct" className=''>NO PRODUIT</a>
+                                    </li>
+                                    <li className="menu-item current-menu-ancestor pl-2">
+                                        <a href="/indication" className=''>INDICATIONS DERMATHOLOGIQUES</a>
                                     </li>
                                     {/* <li className="menu-item current-menu-ancestor"><a href="booking.html" className=''>Booking</a></li> */}
                                 </ul>

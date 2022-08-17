@@ -1,0 +1,19 @@
+.sousTitreBar{
+    width: 100%;
+    border-top-style: solid;
+    border-top-color: #e8e8e8;
+    /* margin-bottom: 1.9em !important; */
+}
+
+.sousTitreBarLongP{
+    margin-bottom: 0.4em !important;
+}
+
+
+.text{
+    margin-bottom: 0.8em !important;
+}
+
+.laboImage{
+    height: 100%;
+}

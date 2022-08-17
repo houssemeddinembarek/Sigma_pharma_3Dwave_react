@@ -30,7 +30,7 @@ function AddProduct() {
     }, []);
 
     return (
-        <div>
+        <div style={{marginTop:250}}>
             <div className="container">
                 <h3 className="text-danger font-weight-bolder border-bottom text-center">Upload Products</h3>
                 <FileUploadScreen getsingle={() => getSingleFileslist()} getMultiple={() => getMultipleFilesList()} />

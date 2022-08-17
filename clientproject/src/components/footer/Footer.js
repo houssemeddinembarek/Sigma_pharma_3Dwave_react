@@ -7,7 +7,7 @@ function Footer() {
                 <div className="column sc_column_container sc_col-sm-12">
                     <div className="sc_column-inner ">
                         <div className="wrapper">
-                            <a href="#" className="sc_icon icon-up sc_icon_shape_square aligncenter scroll_to_top show"></a>
+                            <a href="" className="sc_icon icon-up sc_icon_shape_square aligncenter scroll_to_top show"></a>
                             <div className="sc_empty_space em_height_5-7">
                                 <span className="sc_empty_space_inner"></span>
                             </div>

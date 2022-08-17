@@ -99,87 +99,88 @@ function ListProduct() {
 
 
 
-            <div data-sc-full-width="true" data-sc-full-width-init="false" className="sc_row row sc_custom_1459346050873 mt-n5">
-                <div className="column sc_column_container sc_col-sm-12">
-                    <div className="sc_column-inner ">
-                        <div className="wrapper">
-                            <div className="sc_empty_space em_height_8-3 mt-5">
-                                <span className="sc_empty_space_inner"></span>
-                            </div>
-                            <div className="sc_section sc_section_block">
-                                <div className="sc_section_inner">
-                                    <h6 className="sc_section_subtitle sc_item_subtitle">From The Shop</h6>
-                                    <h2 className="sc_section_title sc_item_title line_show">Our products</h2>
-                                    <div className="sc_section_content_wrap">
-                                        <div className="sc_empty_space em_height_2">
-                                            <span className="sc_empty_space_inner"></span>
-                                        </div>
-                                        <article className="myportfolio-container minimal-light" id="esg-grid-1-1-wrap">
-                                            <div id="esg-grid-1-1" className="esg-grid">
+            <div className="column sc_column_container sc_col-sm-12">
+                <div className="sc_column-inner ">
+                    <div className="wrapper">
+                        <div className="sc_empty_space em_height_8-3 mt-5">
+                            <span className="sc_empty_space_inner"></span>
+                        </div>
+                        <div className="sc_section sc_section_block">
+                            <div className="sc_section_inner">
+                                <h6 className="sc_section_subtitle sc_item_subtitle">From The Shop</h6>
+                                <h2 className="sc_section_title sc_item_title line_show">Our products</h2>
+                                <div className="sc_section_content_wrap">
+                                    <div className="sc_empty_space em_height_2">
+                                        <span className="sc_empty_space_inner"></span>
+                                    </div>
+                                    <article className="myportfolio-container minimal-light" id="esg-grid-1-1-wrap">
+                                        <div id="esg-grid-1-1" className="esg-grid">
 
-                                                <div className="col-12 d-flex flex-row mt-n4 ml-4 mr-4" >
+                                            <div className="d-flex flex-nowrap listProductMarginContainer" >
 
+                                                <div className="row justify-content-center">
                                                     {multipleFiles.map((element, index) =>
-                                                        <div key={element._id}>
+                                                        <div key={element._id} >
                                                             {/* <h6 className="text-danger font-weight-bold">{element.title}</h6> */}
                                                             {/* <h6 className="text-danger font-weight-bold">{element.detail}</h6> */}
                                                             {/* <h6 className="text-danger font-weight-bold">{element.category}</h6> */}
-                                                            <div className="col-12">
 
-                                                                {element.files.map((file, index) =>
-                                                                    <div className="">
-                                                                        <div className="card  ">
-                                                                            {/* <div className="post_item   "> */}
+                                                            {element.files.map((file, index) =>
+                                                                <div className="col-10 mb-5 ">
+                                                                    <div className="card  cardStyle">
+                                                                        {/* <div className="post_item   "> */}
 
-                                                                            <div className="card-body">
-                                                                                <div className="post_featured">
-                                                                                    <div className="">
-                                                                                        <a className="hover_icon  d-flex justify-content-center">
-                                                                                            <img src={`http://localhost:8080/${file.filePath}`} style={{ height: "200px", width: "250px" }} className="card-img-top img-responsive rounded float-left" alt="img" />
-                                                                                        </a>
-                                                                                    </div>
+                                                                        <div className="card-body ">
+                                                                            <div className="post_featured">
+                                                                                <div className="">
+                                                                                    <a className="hover_icon  d-flex justify-content-center">
+                                                                                        <img src={`http://localhost:8080/${file.filePath}`} style={{ height: "200px", width: "250px" }} className="card-img-top img-responsive rounded float-left" alt="img" />
+                                                                                    </a>
                                                                                 </div>
-                                                                                <div className="post_content isotope_item_content">
-                                                                                    <div className="post_category card-title mt-2">
-                                                                                        <a className='scheme_original' rel="tag">{element.title}</a>
-                                                                                    </div>
-                                                                                    <h4 className="post_title">
-                                                                                        <a >{element.detail}</a>
-                                                                                    </h4>
-                                                                                    <div className="post_info">
-                                                                                        <span className="post_info_item post_info_posted">
-                                                                                            <a href="single-post.html" className="post_info_date">March 29, 2016</a>
-                                                                                        </span>
-                                                                                        <span className="post_info_item ">Posted by
-                                                                                            <a href="single-post.html" className="post_info_author">Kate Green</a>
-                                                                                        </span>
-                                                                                    </div>
+                                                                            </div>
+                                                                            <div className="post_content isotope_item_content">
+                                                                                <div className="post_category card-title mt-2">
+                                                                                    <a className='scheme_original' rel="tag">{element.title}</a>
+                                                                                </div>
+                                                                                <h4 className="post_title">
+                                                                                    <a href="single-post.html" className="post_info_date">{element.title}</a>
+                                                                                </h4>
+                                                                                <div className="post_info">
+                                                                                    <span className="post_info_item post_info_posted">
+                                                                                        <a >{element.detail.substring(0, 10) + "..."}</a>
+                                                                                    </span>
+                                                                                    <span className="post_info_item ">Posted by
+                                                                                        <a href="single-post.html" className="post_info_author">Kate Green</a>
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                )}
+                                                                </div>
+                                                            )}
 
-                                                            </div>
+
                                                         </div>
                                                     )}
+
+
                                                 </div>
+
+
+
                                             </div>
-                                        </article>
-                                        <div className="clear"></div>
-                                    </div>
+                                        </div>
+                                    </article>
+                                    <div className="clear"></div>
                                 </div>
                             </div>
-                            <div className="sc_empty_space em_height_6">
-                                <span className="sc_empty_space_inner"></span>
-                            </div>
+                        </div>
+                        <div className="sc_empty_space em_height_6">
+                            <span className="sc_empty_space_inner"></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="sc_row-full-width"></div>
-
-
 
             {/* Detail produit */}
             {/* <div className="sc_row row">
