@@ -3,7 +3,7 @@ import React from 'react'
 function ProductShow() {
     return (
         <div>
-        
+
             <div data-sc-full-width="true" data-sc-full-width-init="false" className="sc_row row sc_custom_1459259915855">
                 <div className="column sc_column_container sc_col-sm-12">
                     <div className="sc_column-inner ">
@@ -135,10 +135,12 @@ function ProductShow() {
                                 <span className="sc_empty_space_inner"></span>
                             </div>
                             <div className="sc_blogger_button sc_item_button">
-                                <a className="sc_button sc_button_square sc_button_style_filled sc_button_size_base">
+                                <a href='/listproduct' className="sc_button sc_button_square sc_button_style_filled sc_button_size_base">
                                     <div>
-                                        <span className="first">View All Posts</span>
-                                        <span className="second">View All Posts</span>
+                                       
+                                            <span className="first">Tous Les Produits</span>
+                                            <span className="second">Tous Les Produits</span>
+                                       
                                     </div>
                                 </a>
                             </div>

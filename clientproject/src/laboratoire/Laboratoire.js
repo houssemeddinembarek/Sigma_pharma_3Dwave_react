@@ -1,9 +1,9 @@
 import React from 'react'
 import "./laboratoire.css"
-import labo from "../assets/labo.jpg";
-import laboGroupImage1 from "../assets/kind-hearted-friendly-looking-young-man-keep-palms-2022-01-28-03-01-45-utc.jpg";
-import laboGroupImage2 from "../assets/overjoyed-woman-laughs-happily-while-drinks-hot-co-2022-03-30-02-30-47-utc.jpg";
-import laboGroupImage3 from "../assets/satisfied-brunette-woman-in-transparent-glasses-ha-2022-01-18-23-39-47-utc.jpg";
+import labo from "../assets/labo-min.jpg";
+import laboGroupImage1 from "../assets/kind.jpg";
+import laboGroupImage2 from "../assets/overjoyed.jpg";
+import laboGroupImage3 from "../assets/satisfied.jpg";
 
 function Laboratoire() {
     return (
@@ -24,7 +24,7 @@ function Laboratoire() {
                                                 <div className="sc_promo custom_promo_01 scheme_light sc_promo_size_large">
                                                     <div className="sc_promo_inner">
                                                         <div className="sc_promo_image ">
-                                                            <img src={labo} className="laboImage"/>
+                                                            <img src={labo} className="laboImage" />
                                                         </div>
                                                         <div className="sc_promo_block sc_align_left cu_block_1">
                                                             <div className="sc_promo_block_inner cu_pds_1">
@@ -84,17 +84,11 @@ function Laboratoire() {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    {/* <a href="booking.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_base aligncenter">
-                                                            <div>
-                                                                <span className="first">Book Now</span>
-                                                                <span className="second">Book Now</span>
-                                                            </div>
-                                                        </a> */}
                                                 </div>
                                             </div>
                                             <div className="column-1_3 sc_column_item" style={{ height: 410 }}>
                                                 <div className="sc_column_item_inner cu_block_7">
-                                                    <img src={laboGroupImage3} className="laboImage"  />
+                                                    <img src={laboGroupImage3} className="laboImage" />
                                                 </div>
                                             </div>
                                             <div className="column-1_3 sc_column_item">
@@ -105,16 +99,9 @@ function Laboratoire() {
                                                         <div className="wrapper">
                                                             <p className="cu_text_c">
                                                                 Développer des solutions et des soins dermatologiques uniques.
-
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    {/* <a href="booking.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_base aligncenter">
-                                                            <div>
-                                                                <span className="first">Book Now</span>
-                                                                <span className="second">Book Now</span>
-                                                            </div>
-                                                        </a> */}
                                                 </div>
                                             </div>
                                             <div className="column-1_3 sc_column_item" style={{ height: 410 }}>
@@ -138,12 +125,6 @@ function Laboratoire() {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    {/* <a href="booking.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_base aligncenter">
-                                                            <div>
-                                                                <span className="first">Book Now</span>
-                                                                <span className="second">Book Now</span>
-                                                            </div>
-                                                        </a> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -171,6 +152,30 @@ function Laboratoire() {
                         L’agrément d’utilisation des produits sont pris en compte dès leur conception.
                     </p>
                 </section>
+
+                <div className="sc_empty_space em_height_1">
+                    <span className="sc_empty_space_inner"></span>
+                </div>
+
+                <h2 className="sc_section_title sc_item_title line_show">Notre Position</h2>
+
+                <iframe className="sc_googlemap" style={{ height: 500, width: 1700 }}
+                    src="https://maps.google.com/maps?width=993&amp;height=638&amp;hl=en&amp;q=35.827947, 10.5982700&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    aria-label="56-34 Waldronnnqsdzedezdezezdfnnn St Flushing, NY 11368, USA">
+                </iframe>
+
+                <div className="sc_empty_space em_height_3-7">
+                    <span className="sc_empty_space_inner"></span>
+                </div>
+
+
+
+                
+
+
+
+
+
 
 
             </div>

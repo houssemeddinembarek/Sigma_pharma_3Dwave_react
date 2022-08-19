@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { getSingleFiles, getMultipleFiles } from '../data/api';
 import "./product.css"
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 function ListProduct() {
     const [singleFiles, setSingleFiles] = useState([]);
     const [multipleFiles, setMultipleFiles] = useState([]);
+    const [obj, setObj] = useState({});
+    const [element, setElement] = useState({});
+
 
     const getMultipleFilesList = async () => {
         try {
@@ -15,90 +24,33 @@ function ListProduct() {
             console.log(error);
         }
     }
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     useEffect(() => {
         // getSingleFileslist();
         getMultipleFilesList();
+
     }, []);
+
+    useEffect(() => {
+        console.log(obj);
+    }, [obj])
+
+    // useEffect(() => {
+    //     console.log(obj)
+    // }, [obj])
+
 
     return (
         <div>
-            <div className="container-fluid mt-5">
-                {/* <div className="col-6">
-                    <h4 className="text-success font-weight-bold">Single Files List</h4>
-                    <div className="row">
-                        {singleFiles.map((file, index) =>
-                            <div className="col-6">
-                                <div className="card mb-2 border-0 p-0">
-                                    <img src={`http://localhost:8080/${file.filePath}`} height="200" className="card-img-top img-responsive" alt="img" />
-                                </div>
-                            </div>
-                        )}
-                    </div>&
-                </div> */}
-
-
-                {/* <div className="row">
-                    <h4 className="text-success font-weight-bold mb-5">Multiple Files List</h4>
-                </div> */}
-
-
-
-                {/* <div className="col-6">
-
-                        <div className="column sc_column_container sc_col-sm-4 mr-3">
-                            <div className="isotope_item isotope_item_masonry isotope_item_masonry_4 isotope_column_4">
-
-                                <div className="post_item post_item_masonry post_item_masonry_4">
-                                    <div className="post_featured">
-                                        <div className="post_thumb" data-image="images/1170x700.jpg" data-title="How massage loses its value">
-                                            <a className="hover_icon hover_icon_link" href="single-post.html">
-                                                <img alt="" src="images/370x370.jpg" width={370} />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="post_content isotope_item_content">
-                                        <div className="post_category">
-                                            <a className='scheme_original' rel="tag">News</a>
-                                        </div>
-                                        <h4 className="post_title">
-                                            <a >How massage loses its value</a>
-                                        </h4>
-                                        <div className="post_info">
-                                            <span className="post_info_item post_info_posted">
-                                                <a href="single-post.html" className="post_info_date">March 29, 2016</a>
-                                            </span>
-                                            <span className="post_info_item ">Posted by
-                                                <a href="single-post.html" className="post_info_author">Kate Green</a>
-                                            </span>
-                                        </div>
-                                        <div className="post_descr">
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div className="card" style={{ width: "400px" }}>
-                            <img className="card-img-top" src="img_avatar1.png" alt="Card image" />
-                            <div className="card-body">
-                                <h4 className="card-title">John Doe</h4>
-                                <p className="card-text">Some example text.</p>
-                                <a href="#" className="btn btn-primary">See Profile</a>
-                            </div>
-                        </div>
-                    </div> */}
-
-
-            </div>
-
-
-
-
-
-
             <div className="column sc_column_container sc_col-sm-12">
                 <div className="sc_column-inner ">
                     <div className="wrapper">
@@ -107,8 +59,8 @@ function ListProduct() {
                         </div>
                         <div className="sc_section sc_section_block">
                             <div className="sc_section_inner">
-                                <h6 className="sc_section_subtitle sc_item_subtitle">From The Shop</h6>
-                                <h2 className="sc_section_title sc_item_title line_show">Our products</h2>
+                                <h6 className="sc_section_subtitle sc_item_subtitle">Tous</h6>
+                                <h2 className="sc_section_title sc_item_title line_show">nos produits</h2>
                                 <div className="sc_section_content_wrap">
                                     <div className="sc_empty_space em_height_2">
                                         <span className="sc_empty_space_inner"></span>
@@ -121,16 +73,11 @@ function ListProduct() {
                                                 <div className="row justify-content-center">
                                                     {multipleFiles.map((element, index) =>
                                                         <div key={element._id} >
-                                                            {/* <h6 className="text-danger font-weight-bold">{element.title}</h6> */}
-                                                            {/* <h6 className="text-danger font-weight-bold">{element.detail}</h6> */}
-                                                            {/* <h6 className="text-danger font-weight-bold">{element.category}</h6> */}
 
                                                             {element.files.map((file, index) =>
                                                                 <div className="col-10 mb-5 ">
                                                                     <div className="card  cardStyle">
-                                                                        {/* <div className="post_item   "> */}
-
-                                                                        <div className="card-body ">
+                                                                        <div className="card-body position-sticky">
                                                                             <div className="post_featured">
                                                                                 <div className="">
                                                                                     <a className="hover_icon  d-flex justify-content-center">
@@ -140,19 +87,31 @@ function ListProduct() {
                                                                             </div>
                                                                             <div className="post_content isotope_item_content">
                                                                                 <div className="post_category card-title mt-2">
-                                                                                    <a className='scheme_original' rel="tag">{element.title}</a>
+                                                                                    <p className='scheme_original' rel="tag">{element.title}</p>
                                                                                 </div>
-                                                                                <h4 className="post_title">
-                                                                                    <a href="single-post.html" className="post_info_date">{element.title}</a>
-                                                                                </h4>
+                                                                                <h6 className="post_title">
+                                                                                    <p href="single-post.html" className="post_info_date">{element.title}</p>
+                                                                                </h6>
                                                                                 <div className="post_info">
                                                                                     <span className="post_info_item post_info_posted">
-                                                                                        <a >{element.detail.substring(0, 10) + "..."}</a>
+                                                                                        <p >
+                                                                                            {(element.detail) ? element.detail.substring(0, 30) + "..." : "pas de details"}</p>
                                                                                     </span>
-                                                                                    <span className="post_info_item ">Posted by
-                                                                                        <a href="single-post.html" className="post_info_author">Kate Green</a>
-                                                                                    </span>
+
                                                                                 </div>
+                                                                                <div className='row justify-content-end'>
+                                                                                    <Button variant="outlined" className='buttonStyle' onClick={
+                                                                                        () => {
+                                                                                            setObj(element);
+                                                                                            handleClickOpen();
+                                                                                        }
+                                                                                    }>
+                                                                                        Detail
+                                                                                    </Button>
+                                                                                </div>
+
+
+
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -163,6 +122,28 @@ function ListProduct() {
                                                         </div>
                                                     )}
 
+
+                                                    <Dialog
+                                                        open={open}
+                                                        onClose={handleClose}
+                                                        aria-labelledby="alert-dialog-title"
+                                                        aria-describedby="alert-dialog-description"
+                                                    >
+                                                        <DialogTitle id="alert-dialog-title">
+                                                            {obj.title}
+                                                        </DialogTitle>
+                                                        <DialogContent>
+                                                            <DialogContentText id="alert-dialog-description">
+                                                                {obj.detail}
+                                                            </DialogContentText>
+                                                        </DialogContent>
+                                                        <DialogActions>
+                                                            {/* <Button onClick={handleClose}>Disagree</Button>
+                                                            <Button onClick={handleClose} autoFocus>
+                                                                Agree
+                                                            </Button> */}
+                                                        </DialogActions>
+                                                    </Dialog>
 
                                                 </div>
 
@@ -180,7 +161,7 @@ function ListProduct() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Detail produit */}
             {/* <div className="sc_row row">
@@ -248,20 +229,6 @@ function ListProduct() {
                     </div>
                 </div>
             </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             {/* product detail */}
             {/* <div data-sc-full-width="true" data-sc-full-width-init="false" data-sc-stretch-content="true" className="sc_row row sc_row-no-padding">
@@ -350,60 +317,48 @@ function ListProduct() {
                 </div>
             </div> */}
 
-
-
-
-
-
-
-
-
-
-
-            <div data-sc-full-width="true" data-sc-full-width-init="false" className="sc_row row sc_custom_1459330954110 scheme_original inverse_colors">
-                <div className="column sc_column_container sc_col-sm-12">
-                    <div className="sc_column-inner ">
-                        <div className="wrapper">
-                            <div className="columns_wrap sc_columns columns_nofluid custom_columns_brands equal_height">
-                                <div className="column-1_4 sc_column_item">
-                                    <div className="sc_column_item_inner">
-                                        <h6 className="sc_title sc_title_regular">We use products of the best brands only</h6>
-                                    </div>
-                                </div>
-                                <div className="column-3_4 sc_column_item span_3">
-                                    <div id="sc_clients_387_wrap" className="sc_clients_wrap">
-                                        <div id="sc_clients_387" className="sc_clients sc_clients_style_clients-1 cu_fullwidth">
-                                            <div className="sc_slider_swiper swiper-slider-container sc_slider_nopagination sc_slider_nocontrols" data-interval="9415" data-slides-per-view="3" data-slides-min-width="100">
-                                                <div className="slides swiper-wrapper">
-                                                    <div className="swiper-slide" data-style="width:100%;">
-                                                        <div id="sc_clients_387_1" className="sc_clients_item">
-                                                            <div className="sc_client_image">
-                                                                <img alt="" src="images/logo-4.png" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="swiper-slide" data-style="width:100%;">
-                                                        <div id="sc_clients_387_2" className="sc_clients_item">
-                                                            <div className="sc_client_image">
-                                                                <img alt="" src="images/logo-2.png" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="swiper-slide" data-style="width:100%;">
-                                                        <div id="sc_clients_387_3" className="sc_clients_item">
-                                                            <div className="sc_client_image">
-                                                                <img alt="" src="images/logo-1.png" />
-                                                            </div>
-                                                        </div>
+            {/* <div data-sc-full-width="true" data-sc-full-width-init="false" className="sc_row row sc_custom_1459330954110 scheme_original inverse_colors">
+        <div className="column sc_column_container sc_col-sm-12">
+            <div className="sc_column-inner ">
+                <div className="wrapper">
+                    <div className="columns_wrap sc_columns columns_nofluid custom_columns_brands equal_height">
+                        <div className="column-1_4 sc_column_item">
+                            <div className="sc_column_item_inner">
+                                <h6 className="sc_title sc_title_regular">We use products of the best brands only</h6>
+                            </div>
+                        </div>
+                        <div className="column-3_4 sc_column_item span_3">
+                            <div id="sc_clients_387_wrap" className="sc_clients_wrap">
+                                <div id="sc_clients_387" className="sc_clients sc_clients_style_clients-1 cu_fullwidth">
+                                    <div className="sc_slider_swiper swiper-slider-container sc_slider_nopagination sc_slider_nocontrols" data-interval="9415" data-slides-per-view="3" data-slides-min-width="100">
+                                        <div className="slides swiper-wrapper">
+                                            <div className="swiper-slide" data-style="width:100%;">
+                                                <div id="sc_clients_387_1" className="sc_clients_item">
+                                                    <div className="sc_client_image">
+                                                        <img alt="" src="images/logo-4.png" />
                                                     </div>
                                                 </div>
-                                                <div className="sc_slider_controls_wrap">
-                                                    <a className="sc_slider_prev" href="#"></a>
-                                                    <a className="sc_slider_next" href="#"></a>
+                                            </div>
+                                            <div className="swiper-slide" data-style="width:100%;">
+                                                <div id="sc_clients_387_2" className="sc_clients_item">
+                                                    <div className="sc_client_image">
+                                                        <img alt="" src="images/logo-2.png" />
+                                                    </div>
                                                 </div>
-                                                <div className="sc_slider_pagination_wrap"></div>
+                                            </div>
+                                            <div className="swiper-slide" data-style="width:100%;">
+                                                <div id="sc_clients_387_3" className="sc_clients_item">
+                                                    <div className="sc_client_image">
+                                                        <img alt="" src="images/logo-1.png" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div className="sc_slider_controls_wrap">
+                                            <a className="sc_slider_prev" href="#"></a>
+                                            <a className="sc_slider_next" href="#"></a>
+                                        </div>
+                                        <div className="sc_slider_pagination_wrap"></div>
                                     </div>
                                 </div>
                             </div>
@@ -411,13 +366,10 @@ function ListProduct() {
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
         </div>
+                </div> */}
+
+        </div >
     )
 }
 

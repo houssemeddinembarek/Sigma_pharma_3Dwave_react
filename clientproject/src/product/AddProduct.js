@@ -23,7 +23,6 @@ function AddProduct() {
         }
     }
 
-
     useEffect(() => {
         getSingleFileslist();
         getMultipleFilesList();

@@ -24,7 +24,9 @@ a {
     width: max-content;
     height: 400px;
 }
-
+.buttonStyle:hover{
+    background-color: crimson !important;
+}
 
 
 

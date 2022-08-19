@@ -8,6 +8,7 @@ import Hyperpigmentation from './types/Hyperpigmentation'
 import Mycoses from './types/Mycoses';
 import Protectionsolaire from './types/Protectionsolaire';
 import Vieillissementcutane from './types/Vieillissementcutane';
+import "./indication.css";
 
 function Indication() {
     const [acne, setAcne] = useState(true);
@@ -125,35 +126,35 @@ function Indication() {
             <div className="column sc_column_container sc_col-sm-12">
                 <div className="sc_column-inner "></div>
                 <div className="wrapper" style={{ marginTop: 150 }}>
-                    <article className="myportfolio-container minimal-light" id="esg-grid-4-1-wrap">
+                    <article className="myportfolio-container minimal-light " id="esg-grid-4-1-wrap">
                         <div id="esg-grid-4-1" className="esg-grid">
-                            <article className="esg-filters esg-singlefilters mb-5">
-                                <div className="esg-filter-wrapper esg-fgc-4">
-                                    <div className="esg-filterbutton" onClick={onAcne}>
+                            <article className="esg-filters esg-singlefilters mb-5 ">
+                                <div className="esg-filter-wrapper esg-fgc-4 ">
+                                    <div className="esg-filterbutton articleStyle" onClick={onAcne}>
                                         <span >ACNE</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onHyperpigmentation}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onHyperpigmentation}>
                                         <span>HYPERPIGMENTATION</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onProtectionsolaire}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onProtectionsolaire}>
                                         <span>PROTECTION SOLAIRE</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onVieillissementcutane}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onVieillissementcutane}>
                                         <span>LE VIEILLISSEMENT CUTANE</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onCicatrice}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onCicatrice}>
                                         <span>LES CICATRICES</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onAlopecie}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onAlopecie}>
                                         <span>ALOPECIE</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onCors}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onCors}>
                                         <span>CORS, DURILLONS ET CALLOSITES</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onMycoses}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onMycoses}>
                                         <span>MYCOSES</span>
                                     </div>
-                                    <div className="esg-filterbutton" onClick={onDepigmentation}>
+                                    <div className="esg-filterbutton articleStyle" onClick={onDepigmentation}>
                                         <span>DEPIGMENTATION OU VITILIGO</span>
                                     </div>
                                     <div className="eg-clearfix"></div>
@@ -227,10 +228,6 @@ function Indication() {
                 </div>
             </div>
         </div>
-
-
-
-
     )
 }
 
